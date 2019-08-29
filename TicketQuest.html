@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>TicketQuest</title>
+</head>
+<body>
+<br>
+<font size="18" color="red" face="helvetica"><center>TicketQuest</center></font>
+<br>
+<font size="1" color="black" face="helvetica"><p>Long ago in ages past, the ancestors knew of a magic called 'tickets'. These tickets granted them great wisdom of who was troubled. The ancestors used tickets to help those in need, and they became known as the Supporting Ones, as they roamed the lands on a quest to assist. Now, this magic has returned and must be used by you, the chosen one, to assist once more. Welcome to TicketQuest.</p></font>
+<br>
+<font size="1" color="black" face="helvetica"><p>A simple levelling system to make closing tickets feel worth it. Each ticket completed, click the relevent button by priority. Click level up once you reach 50 XP.</font></p>
+Current XP: <input type="number" id="xpnumber" readonly="readonly">
+<br>
+Current Level: <input type="number" id="lvlnumber">
+<br>
+
+<button onclick="low()">Complete Low Ticket</button>
+<br>
+<button onclick="med()">Complete Med Ticket</button>
+<br>
+<button onclick="high()">Complete High Ticket</button>
+<br>
+<br>
+<button onclick="lvlup()">Level Up @ 50 XP</button>
+
+<script>
+function lvlup(){
+  if (parseInt(document.getElementById("xpnumber").value) > 50){
+  document.getElementById("lvlnumber").stepUp(1);
+  document.getElementById("xpnumber").stepDown(50);
+  } else {
+  window.alert("Your XP is less than 50, adventurer.");
+  }
+}
+</script>
+<script>
+function low() {
+  document.getElementById("xpnumber").stepUp(5);
+}
+</script>
+<script>
+function med() {
+  document.getElementById("xpnumber").stepUp(10);
+}
+</script>
+<script>
+function high() {
+  document.getElementById("xpnumber").stepUp(15);
+}
+</script>
+</body>
+<footer>Made with love in London by Jamie Welch</footer>
+</html>
